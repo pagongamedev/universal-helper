@@ -1,0 +1,38 @@
+{
+  "name": "universal-helper",
+  "version": "0.0.1",
+  "description": "helper for fullstack developer",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "analyzer-module": "esbuild-visualizer --metadata ./analytics/esbuild-analyzer-meta.module.json --filename ./analytics/esbuild-analyzer-stat.module.htm",
+    "analyzer-dev": "esbuild-visualizer --metadata ./analytics/esbuild-analyzer-meta.dev.json --filename ./analytics/esbuild-analyzer-stat.dev.htm",
+    "dev": "node ./utils/build/esbuild-config.dev.js && npm run nalyzer-dev",
+    "analyzer": "esbuild-visualizer --metadata ./analytics/esbuild-analyzer-meta.json --filename ./analytics/esbuild-analyzer-stat.htm",
+    "build": "node ./utils/build/esbuild-config.prod.js && npm run analyzer && npm run analyzer-module"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pagongamedev/universal-helper.git"
+  },
+  "keywords": [
+    "helper",
+    "javascirpt",
+    "node",
+    "fullstack",
+    "frontend",
+    "backend"
+  ],
+  "author": "pagongamedev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pagongamedev/universal-helper/issues"
+  },
+  "homepage": "https://github.com/pagongamedev/universal-helper#readme",
+  "devDependencies": {
+    "zustand": "^4.1.5"
+  },
+  "peerDependencies": {
+    "zustand": "^4.X"
+  }
+}

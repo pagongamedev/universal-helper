@@ -1,0 +1,29 @@
+{
+  "name": "threedd-plugin-xr",
+  "version": "0.0.1",
+  "description": "xr plug-in for threedd",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "analyzer-module": "esbuild-visualizer --metadata ./utils/build/esbuild-analyzer-meta.module.json --filename ./utils/build/esbuild-analyzer-stat.module.htm",
+    "analyzer-dev": "esbuild-visualizer --metadata ./utils/build/esbuild-analyzer-meta.dev.json --filename ./utils/build/esbuild-analyzer-stat.dev.htm",
+    "dev": "node ./utils/build/esbuild-config.dev.js && npm run nalyzer-dev",
+    "analyzer": "esbuild-visualizer --metadata ./utils/build/esbuild-analyzer-meta.json --filename ./utils/build/esbuild-analyzer-stat.htm",
+    "build": "node ./utils/build/esbuild-config.prod.js && npm run analyzer && npm run analyzer-module"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pagongamedev/threedd-plugin-xr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pagongamedev/threedd-plugin-xr/issues"
+  },
+  "homepage": "https://github.com/pagongamedev/threedd-plugin-xr#readme",
+  "dependencies": {
+    "@types/three": "^0.143.1",
+    "three": "^0.143.0",
+    "threedd": "file:../threedd"
+  }
+}
