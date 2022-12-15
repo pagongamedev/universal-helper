@@ -29,6 +29,9 @@ using file
 // auto shallow
   const { user , setUser }: any = useStore(['user','setUser']);
 
+// disable shallow for refresh very thing
+  const { user , setUser }: any = useStore(['user','setUser'], false);
+
 // get by one without shallow
   const { user }: any = useStore(['user']);
   const { setUser }: any = useStore(['setUser']);
