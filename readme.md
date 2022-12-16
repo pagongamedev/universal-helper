@@ -72,3 +72,23 @@ if (error){
 
 console.log("res :", res);
 ```
+
+## helperTailwind
+
+### fixbugVHScreenInMobile
+fixbug over size screen in mobile
+
+```javascript
+import { helperTailwind } from 'universal-helper';
+
+helperTailwind.fixbugVHScreenInMobile()
+```
+
+use HScreen class instead of h-screen
+```css
+.HScreen {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+```
+
