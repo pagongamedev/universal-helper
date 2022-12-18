@@ -81,7 +81,7 @@ fixbug over size screen in mobile
 ```javascript
 import { helperTailwind } from 'universal-helper';
 
-helperTailwind.fixbugVHScreenInMobile()
+helperTailwind.fixbugVHScreenInMobile();
 ```
 
 use HScreen class instead of h-screen
@@ -92,3 +92,25 @@ use HScreen class instead of h-screen
 }
 ```
 
+## helperI18Next
+
+### middlewareInit
+middleware for separate to i18n local store
+
+```javascript
+import { helperI18Next } from 'universal-helper';
+
+const i18nList = [
+  { name: 'main', locate: { en: { foo: '' }, th: { foo: '' } } },
+  { name: 'local1', locate: { en: { foo: '' }, th: { foo: '' } } },
+  { name: 'local2', locate: { en: { foo: '' }, th: { foo: '' } } },
+];
+
+helperI18Next.middlewareInit(
+  {
+    debug: true,
+    fallbackLng: 'th',
+  },
+  i18nList,
+);
+```

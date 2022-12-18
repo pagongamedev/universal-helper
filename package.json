@@ -1,6 +1,6 @@
 {
   "name": "universal-helper",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "helper for fullstack developer",
   "main": "src/index.ts",
   "scripts": {
@@ -30,9 +30,13 @@
   },
   "homepage": "https://github.com/pagongamedev/universal-helper#readme",
   "devDependencies": {
+    "i18next": "^22.4.5",
+    "react-i18next": "^12.1.1",
     "zustand": "^4.1.5"
   },
   "peerDependencies": {
+    "i18next": "^22.X",
+    "react-i18next": "^12.X",
     "zustand": "^4.X"
   }
 }
