@@ -2,7 +2,7 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 // import LanguageDetector from 'i18next-browser-languagedetector';
 
-export const middlewareInit = ({ debug = true, fallbackLng = 'en' }, i18nList: any[]) => {
+export const MiddlewareInit = ({ debug = true, fallbackLng = 'en' }, i18nList: any[]) => {
   const resources: any = {};
   for (const i in i18nList) {
     if (i18nList[i].name !== '') {

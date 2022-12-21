@@ -75,13 +75,13 @@ console.log("res :", res);
 
 ## helperTailwind
 
-### fixbugVHScreenInMobile
+### FixbugVHScreenInMobile
 fixbug over size screen in mobile
 
 ```javascript
 import { helperTailwind } from 'universal-helper';
 
-helperTailwind.fixbugVHScreenInMobile();
+helperTailwind.FixbugVHScreenInMobile();
 ```
 
 use HScreen class instead of h-screen
@@ -94,7 +94,7 @@ use HScreen class instead of h-screen
 
 ## helperI18Next
 
-### middlewareInit
+### MiddlewareInit
 middleware for separate to i18n local store
 
 ```javascript
@@ -106,11 +106,24 @@ const i18nList = [
   { name: 'local2', locate: { en: { foo: '' }, th: { foo: '' } } },
 ];
 
-helperI18Next.middlewareInit(
+helperI18Next.MiddlewareInit(
   {
     debug: true,
     fallbackLng: 'th',
   },
   i18nList,
 );
+```
+
+
+## helperTime
+
+## WaitForMilliSecond
+
+```javascript
+import { helperTime } from 'universal-helper';
+
+const foo = async () => {
+  await helperTime.WaitForMilliSecond(5000);
+}
 ```

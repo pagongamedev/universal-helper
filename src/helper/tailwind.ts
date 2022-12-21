@@ -9,7 +9,7 @@ const updateVHScreen = () => {
 // Use in CSS
 // height: calc(var(--vh, 1vh) * 100);
 
-export const fixbugVHScreenInMobile = () => {
+export const FixbugVHScreenInMobile = () => {
   updateVHScreen();
   window.addEventListener('resize', updateVHScreen);
 };
