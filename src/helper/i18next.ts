@@ -2,7 +2,10 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 // import LanguageDetector from 'i18next-browser-languagedetector';
 
-export const MiddlewareInit = ({ debug = true, fallbackLng = 'en' }, i18nList: any[]) => {
+export const MiddlewareInit = (
+  { debug = true, fallbackLng = 'en' },
+  i18nList: any[]
+) => {
   const resources: any = {};
   for (const i in i18nList) {
     if (i18nList[i].name !== '') {
@@ -39,3 +42,20 @@ export const MiddlewareInit = ({ debug = true, fallbackLng = 'en' }, i18nList: a
   return i18n;
 };
 
+export const MappingObject = (input: any, tranFunc: any): string => {
+  if (!input) {
+    return '';
+  }
+  if (typeof input === 'string' || input instanceof String) {
+    return tranFunc(input) || '';
+  }
+
+  if (typeof input === 'object' || input instanceof Object) {
+    if ('key' in input) {
+      return tranFunc(input.key, 'option' in input ? input.option : undefined);
+    }
+  }
+
+  console.log('cant mapping type of ', typeof input);
+  return '';
+};

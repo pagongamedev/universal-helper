@@ -115,6 +115,27 @@ helperI18Next.MiddlewareInit(
 );
 ```
 
+### MappingObject
+
+```javascript
+import { helperI18Next } from 'universal-helper';
+
+const JSX = () => {
+  const { t } = useTranslation([i18nDomainName]);
+
+  return (
+    <>
+      <div>{helperI18Next.MappingObject('validate.required', t)}</div>
+      <div>
+        {helperI18Next.MappingObject({ key: 'validate.min', option: { count: 4 } }, t)}
+      </div>
+    </>
+  );
+};
+```
+
+
+
 
 ## helperTime
 
