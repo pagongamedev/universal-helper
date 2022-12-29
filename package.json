@@ -1,5 +1,5 @@
 {
-  "name": "univel-helper",
+  "name": "universal-helper",
   "version": "0.0.9",
   "description": "helper for fullstack developer",
   "main": "src/index.ts",
