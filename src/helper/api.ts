@@ -1,4 +1,8 @@
-export const GolangResponse = async (promiseAPI: any) => {
+import { TypeGolangResponse } from './type';
+
+export const GolangResponse = async (
+  promiseAPI: any
+): Promise<TypeGolangResponse> => {
   return promiseAPI
     .then((res: any) => {
       return { res: res.data, error: null };

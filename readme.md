@@ -54,9 +54,6 @@ if (error){
 console.log("res :", res);
 ```
 
-### TypeReturn
-use for short return promise in useContext
-
 ## helperAPI
 ### GolangResponse
 ```javascript
@@ -134,8 +131,30 @@ const JSX = () => {
 };
 ```
 
+## helperType
 
+### TypeGolangResponse
 
+```javascript
+import { helperType } from 'universal-helper';
+
+// TypeGolangResponse = { res: any; error: Error | null }
+const func = () : helperType.TypeGolangResponse => {
+
+}
+```
+
+### TypeReturn
+use for short return promise in useContext
+
+```javascript
+import { helperType } from 'universal-helper';
+
+// TypeGolangResponse = { res: any; error: Error | null }
+const func = async () : helperType.TypeGolangResponse => {
+return helperType.ReturnInterfacePromise({ res: null, error: null });
+}
+```
 
 ## helperTime
 

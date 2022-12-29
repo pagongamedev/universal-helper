@@ -1,4 +1,8 @@
-export const GolangResponse = async (promiseAPI: any) => {
+import { TypeGolangResponse } from './type';
+
+export const GolangResponse = async (
+  promiseAPI: any
+): Promise<TypeGolangResponse> => {
   return promiseAPI
     .then((res: any) => {
       return { res: res, error: null };
@@ -6,10 +10,4 @@ export const GolangResponse = async (promiseAPI: any) => {
     .catch((error: any) => {
       return { res: null, error: error };
     });
-};
-
-export const TypeReturn = (res: any): Promise<any> => {
-  return new Promise((resolve) => {
-    resolve(res);
-  });
 };
