@@ -1,6 +1,6 @@
 {
   "name": "univel-helper",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "helper for fullstack developer",
   "main": "src/index.ts",
   "scripts": {
