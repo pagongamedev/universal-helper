@@ -91,10 +91,21 @@ use HScreen class instead of h-screen
 
 ## helperI18Next
 
+### TypeI18NDomain
+```javascript
+import { helperI18Next } from 'universal-helper';
+
+// type TypeI18NDomain = { name: string; locate: any };
+const i18nLocale1: helperI18Next.TypeI18NDomain = {
+  name: 'local1',
+  locate: { en: { foo: '' }, th: { foo: '' } },
+};
+```
+
 ### MiddlewareInit
 middleware for separate to i18n local store
 
-```javascript
+ ```javascript
 import { helperI18Next } from 'universal-helper';
 
 const i18nList = [
