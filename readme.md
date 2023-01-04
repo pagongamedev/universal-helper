@@ -39,6 +39,24 @@ using file
 ```
 <br/>
 
+## helperReact
+
+### GetTempWhenSetState
+```javascript
+import { helperReact } from 'universal-helper';
+
+const JSX = () => {
+  const [count, setCount] = useState<number>(0);
+
+  useEffect(() => {
+    const _count = helperReact.GetTempWhenSetState(setCount, count + 1);
+    console.log(_count);
+  }, []);
+
+  return <></>;
+};
+```
+
 ## helperPromise
 ### GolangResponse
 ```javascript
