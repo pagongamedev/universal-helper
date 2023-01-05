@@ -1,6 +1,6 @@
 {
   "name": "universal-helper",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "helper for fullstack developer",
   "main": "src/index.ts",
   "scripts": {

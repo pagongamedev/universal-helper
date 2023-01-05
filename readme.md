@@ -250,6 +250,23 @@ import { helperTime } from 'universal-helper';
 
 // support DayJS , Firestore.Timestamp , Date
 const dayjs = Dayjs()
-const date =  = helperTime.ParseDate(v);
+const date = helperTime.ParseDate(dayjs);
 ```
 
+### IsJsonFirestoreTimeStamp
+```javascript
+import { helperTime } from 'universal-helper';
+
+const jsonData = { nanoseconds: 813000000, seconds: 1672944437 };
+console.log(helperTime.IsJsonFirestoreTimeStamp(jsonData));
+// true
+```
+
+### ConvertJsonFirestoreTimeStampToDate
+make sure to Date for upload firestore or create DayJS
+```javascript
+import { helperTime } from 'universal-helper';
+
+const jsonData = { nanoseconds: 813000000, seconds: 1672944437 };
+const date = helperTime.ConvertJsonFirestoreTimeStampToDate(jsonData);
+```
