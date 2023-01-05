@@ -173,16 +173,21 @@ const func = () : helperType.TypeGolangResponse => {
 }
 ```
 
-### TypeReturn
-use for short return promise in useContext
-
+### TypeAPIDataResponse
 ```javascript
-import { helperType } from 'universal-helper';
+// confirm return with data
+export type TypeAPIDataResponse = {
+  data: any;
+  [key: string]: any;
+};
+```
 
-// TypeGolangResponse = { res: any; error: Error | null }
-const func = async () : helperType.TypeGolangResponse => {
-return helperType.ReturnInterfacePromise({ res: null, error: null });
-}
+### TypeAPIDataGolangResponse
+```javascript
+export type TypeAPIDataGolangResponse = {
+  res: TypeAPIDataResponse | null;
+  error: Error | null;
+};
 ```
 
 ### TypePaginationResponse
@@ -214,10 +219,21 @@ export type TypePaginationResponse = {
   };
 };
 ```
+### ReturnInterfacePromise
+use for short return promise in useContext
+
+```javascript
+import { helperType } from 'universal-helper';
+
+// TypeGolangResponse = { res: any; error: Error | null }
+const func = async () : helperType.TypeGolangResponse => {
+return helperType.ReturnInterfacePromise({ res: null, error: null });
+}
+```
 
 ## helperTime
 
-## WaitForMilliSecond
+### WaitForMilliSecond
 
 ```javascript
 import { helperTime } from 'universal-helper';
@@ -227,7 +243,7 @@ const foo = async () => {
 }
 ```
 
-## ParseDate
+### ParseDate
 make sure to Date for upload firestore or create DayJS
 ```javascript
 import { helperTime } from 'universal-helper';

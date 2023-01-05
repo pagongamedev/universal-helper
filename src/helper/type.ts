@@ -6,6 +6,17 @@ export const ReturnInterfacePromise = (res: any): Promise<any> => {
   });
 };
 
+// confirm return with data
+export type TypeAPIDataResponse = {
+  data: any;
+  [key: string]: any;
+};
+
+export type TypeAPIDataGolangResponse = {
+  res: TypeAPIDataResponse | null;
+  error: Error | null;
+};
+
 // draft
 export type TypePaginationResponse = {
   query: {
