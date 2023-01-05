@@ -1,10 +1,6 @@
 import Dayjs from 'dayjs';
 import { Timestamp } from 'firebase/firestore';
 
-export const WaitForMilliSecond = (delay: number) => {
-  return new Promise((res) => setTimeout(res, delay));
-};
-
 export const ParseDate = (object: any) => {
   // Date
   if (Object.getPrototypeOf(object) === Date.prototype) {
@@ -21,6 +17,6 @@ export const ParseDate = (object: any) => {
     return object.toDate();
   }
 
-  console.log('ParseDate : Not Support');
+  console.log('Not Support');
   return object;
 };

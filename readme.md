@@ -185,6 +185,36 @@ return helperType.ReturnInterfacePromise({ res: null, error: null });
 }
 ```
 
+### TypePaginationResponse
+
+```javascript
+export type TypePaginationResponse = {
+  query: {
+    limit: number;
+    offset: number;
+    page: number;
+    size: number;
+  };
+  item: {
+    from: number;
+    to: number;
+    total: number;
+  };
+  page: {
+    current: number;
+    last: number;
+    size: number;
+    url: {
+      previous: string | null;
+      next: string | null;
+      first: string | null;
+      last: string | null;
+      templage: string | null;
+    };
+  };
+};
+```
+
 ## helperTime
 
 ## WaitForMilliSecond
@@ -196,3 +226,14 @@ const foo = async () => {
   await helperTime.WaitForMilliSecond(5000);
 }
 ```
+
+## ParseDate
+make sure to Date for upload firestore or create DayJS
+```javascript
+import { helperTime } from 'universal-helper';
+
+// support DayJS , Firestore.Timestamp , Date
+const dayjs = Dayjs()
+const date =  = helperTime.ParseDate(v);
+```
+
