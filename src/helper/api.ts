@@ -14,7 +14,7 @@ export const GolangResponse = async (
         }
         return { res: null, error: error };
       });
-  } catch (error) {
+  } catch (error: any) {
     return { res: null, error: error };
   }
 };
