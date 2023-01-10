@@ -7,13 +7,13 @@ export const ReturnInterfacePromise = (res: any): Promise<any> => {
 };
 
 // confirm return with data
-export type TypeAPIDataResponse = {
+export type TypeAPIData = {
   data: any;
   [key: string]: any;
 };
 
 export type TypeAPIDataGolangResponse = {
-  res: TypeAPIDataResponse | null;
+  res: TypeAPIData | null;
   error: Error | null;
 };
 

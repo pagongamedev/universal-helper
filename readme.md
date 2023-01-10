@@ -173,10 +173,10 @@ const func = () : helperType.TypeGolangResponse => {
 }
 ```
 
-### TypeAPIDataResponse
+### TypeAPIData
 ```javascript
 // confirm return with data
-export type TypeAPIDataResponse = {
+export type TypeAPIData = {
   data: any;
   [key: string]: any;
 };
@@ -185,7 +185,7 @@ export type TypeAPIDataResponse = {
 ### TypeAPIDataGolangResponse
 ```javascript
 export type TypeAPIDataGolangResponse = {
-  res: TypeAPIDataResponse | null;
+  res: TypeAPIData | null;
   error: Error | null;
 };
 ```
