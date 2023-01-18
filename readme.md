@@ -270,3 +270,65 @@ import { helperTime } from 'universal-helper';
 const jsonData = { nanoseconds: 813000000, seconds: 1672944437 };
 const date = helperTime.ConvertJsonFirestoreTimeStampToDate(jsonData);
 ```
+
+## helperScreen
+
+### FullScreen.OnChange
+```javascript
+import { helperScreen } from 'universal-helper';
+
+const OnChangeFullScreen = (event: Event) => {
+  if (helperScreen.FullScreen.IsFullScreen()) {
+    console.log('Enter Full Screen');
+  } else {
+    console.log('Exit Full Screen');
+  }
+};
+helperScreen.FullScreen.OnChange(OnChangeFullScreen);
+```
+
+### FullScreen.IsFullScreen
+
+```javascript
+import { helperScreen } from 'universal-helper';
+
+if (helperScreen.FullScreen.IsFullScreen()) {
+  console.log('Enter Full Screen');
+} else {
+  console.log('Exit Full Screen');
+}
+
+```
+
+### FullScreen.Request
+```javascript
+import { helperScreen } from 'universal-helper';
+
+// FullScreen
+await helperScreen.FullScreen.Request();
+
+// FullScreen Video
+await helperScreen.FullScreen.Request(videoElement);
+
+const options = {
+  navigationUI: 'hide',
+  direction: 'landscape'
+};
+// FullScreen With Options
+await helperScreen.FullScreen.Request(null,options);
+```
+### FullScreen.Cancel
+```javascript
+import { helperScreen } from 'universal-helper';
+
+helperScreen.FullScreen.Cancel();
+```
+
+## helperPWA
+
+### IsPWA
+```javascript
+import { helperPWA } from 'universal-helper';
+
+console.log("Is PWA :",helperPWA.IsPWA());
+```
