@@ -1,0 +1,74 @@
+:root {
+  --uh-sat: env(safe-area-inset-top);
+  --uh-sar: env(safe-area-inset-right);
+  --uh-sab: env(safe-area-inset-bottom);
+  --uh-sal: env(safe-area-inset-left);
+}
+
+// ====== Padding ======
+.uh-notch-p-t {
+  padding-top: env(safe-area-inset-top);
+}
+
+.uh-notch-p-r {
+  padding-right: env(safe-area-inset-right);
+}
+
+.uh-notch-p-b {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.uh-notch-p-l {
+  padding-left: env(safe-area-inset-left);
+}
+
+.uh-notch-p-x {
+  padding-right: env(safe-area-inset-right);
+  padding-left: env(safe-area-inset-left);
+}
+
+.uh-notch-p-y {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.uh-notch-p {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-right: env(safe-area-inset-right);
+  padding-left: env(safe-area-inset-left);
+}
+
+// ====== Margin ======
+
+.uh-notch-m-t {
+  margin-top: env(safe-area-inset-top);
+}
+
+.uh-notch-m-r {
+  margin-right: env(safe-area-inset-right);
+}
+
+.uh-notch-m-b {
+  margin-bottom: env(safe-area-inset-bottom);
+}
+
+.uh-notch-m-l {
+  margin-left: env(safe-area-inset-left);
+}
+
+.uh-notch-m-x {
+  margin-right: env(safe-area-inset-right);
+  margin-left: env(safe-area-inset-left);
+}
+.uh-notch-m-y {
+  margin-top: env(safe-area-inset-top);
+  margin-bottom: env(safe-area-inset-bottom);
+}
+
+.uh-notch-m {
+  margin-top: env(safe-area-inset-top);
+  margin-bottom: env(safe-area-inset-bottom);
+  margin-right: env(safe-area-inset-right);
+  margin-left: env(safe-area-inset-left);
+}

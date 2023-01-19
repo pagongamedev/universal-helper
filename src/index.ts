@@ -8,3 +8,4 @@ export * as helperTailwind from './helper/tailwind';
 export * as helperTime from './helper/time';
 export * as helperType from './helper/type';
 export * as helperZustand from './helper/zustand';
+export * as helperEvent from './helper/event';

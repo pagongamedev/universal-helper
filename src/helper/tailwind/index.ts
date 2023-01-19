@@ -1,6 +1,7 @@
-import { IsPWA } from './pwa';
+import { IsPWA } from '../pwa';
 
 const updateVHScreen = () => {
+  // pwa have buh in vh screen
   const vh = (IsPWA() ? window.outerHeight : window.innerHeight) * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 };

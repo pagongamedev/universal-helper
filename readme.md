@@ -93,20 +93,22 @@ console.log("res :", res);
 ### FixbugVHScreenInMobile
 fixbug over size screen in mobile
 
+
+### css/tailwind.css
+import css before use FixbugVHScreenInMobile
+```javascript
+import 'universal-helper/css/tailwind.css';
+
+// class
+// .uh-h-screen
+```
+use uh-h-screen class instead of h-screen
+
 ```javascript
 import { helperTailwind } from 'universal-helper';
 
 helperTailwind.FixbugVHScreenInMobile();
 ```
-
-use HScreen class instead of h-screen
-```css
-.HScreen {
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
-}
-```
-
 ## helperI18Next
 
 ### TypeI18NDomain
@@ -273,6 +275,7 @@ const date = helperTime.ConvertJsonFirestoreTimeStampToDate(jsonData);
 
 ## helperScreen
 
+### FullScreen
 ### FullScreen.OnChange
 ```javascript
 import { helperScreen } from 'universal-helper';
@@ -323,6 +326,61 @@ import { helperScreen } from 'universal-helper';
 
 helperScreen.FullScreen.Cancel();
 ```
+### Notch
+
+### css/screen/notch.css
+import css before use Screen.Notch
+```javascript
+import 'universal-helper/css/screen/notch.css';
+
+
+// class
+// uh-notch-p-t : safe-area padding top
+// uh-notch-p-r : safe-area padding right
+// uh-notch-p-b : safe-area padding bottom
+// uh-notch-p-l : safe-area padding left
+
+// uh-notch-p-x : safe-area padding r
+// uh-notch-p-y : safe-area padding x
+
+// uh-notch-p   : safe-area padding all
+
+// uh-notch-m-t : safe-area margin top
+// uh-notch-m-r : safe-area margin right
+// uh-notch-m-b : safe-area margin bottom
+// uh-notch-m-l : safe-area margin left
+
+// uh-notch-m-x : safe-area margin r
+// uh-notch-m-y : safe-area margin x
+
+// uh-notch-m   : safe-area margin all
+```
+
+### Notch.GetNotchArea
+```javascript
+import { helperScreen } from 'universal-helper';
+
+const notchArea = helperScreen.Notch.GetNotchArea();
+// { top: '0px', right: '0px', bottom: '0px', left: '0px' }
+```
+
+### Notch.InitOnChange
+init for enable event notch onchange
+```javascript
+import { helperScreen } from 'universal-helper';
+helperScreen.Notch.InitOnChange();
+```
+### Notch.AddEventListener
+```javascript
+import { helperScreen } from 'universal-helper';
+helperScreen.Notch.AddEventListener(onNotchChange);
+```
+
+### Notch.RemoveEventListener
+```javascript
+import { helperScreen } from 'universal-helper';
+helperScreen.Notch.RemoveEventListener(onNotchChange);
+```
 
 ## helperPWA
 
@@ -331,4 +389,20 @@ helperScreen.FullScreen.Cancel();
 import { helperPWA } from 'universal-helper';
 
 console.log("Is PWA :",helperPWA.IsPWA());
+```
+
+## helperEvent
+
+### ClassEventObserver
+```javascript
+import { helperEvent } from 'universal-helper';
+
+const onCustomEvent = new helperEvent.ClassEventObserver();
+
+const fn = (value:any)=>{}
+
+onCustomEvent.subscribe(fn);
+onCustomEvent.unsubscribe(fn);
+
+onCustomEvent.notify("new value");
 ```
