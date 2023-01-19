@@ -15,3 +15,7 @@ interface Document {
   mozCancelFullScreen(): void;
   msExitFullscreen(): void;
 }
+
+interface Navigator {
+  standalone: boolean;
+}

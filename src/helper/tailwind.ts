@@ -1,5 +1,7 @@
+import { IsPWA } from './pwa';
+
 const updateVHScreen = () => {
-  const vh = window.innerHeight * 0.01;
+  const vh = (IsPWA() ? window.outerHeight : window.innerHeight) * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 };
 
@@ -12,4 +14,5 @@ const updateVHScreen = () => {
 export const FixbugVHScreenInMobile = () => {
   updateVHScreen();
   window.addEventListener('resize', updateVHScreen);
+  window.addEventListener('orientationchange', updateVHScreen);
 };
