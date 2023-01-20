@@ -1,10 +1,12 @@
 interface HTMLElement {
+  // fullscreen
   mozRequestFullScreen(options?: FullscreenOptions): Promise<void>;
   webkitRequestFullscreen(): void;
   msRequestFullscreen(options?: FullscreenOptions): Promise<void>;
 }
 
 interface Document {
+  // fullscreen
   webkitFullscreenEnabled: boolean;
   mozFullScreenEnabled: boolean;
   msFullscreenEnabled: boolean;
@@ -17,5 +19,5 @@ interface Document {
 }
 
 interface Navigator {
-  standalone: boolean;
+  standalone: boolean; // pwa
 }

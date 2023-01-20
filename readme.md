@@ -1,5 +1,12 @@
 # Universal Helper by Pagongamedev
 
+## import universal-helper.d.ts
+if type error import
+create 'universal-helper.d.ts' in your project
+```javascript
+import 'universal-helper/src/types';
+```
+
 ## helperZustand
 
 ### StateMapping
