@@ -4,7 +4,7 @@ import { initReactI18next } from 'react-i18next';
 
 export type TypeI18NDomain = { name: string; locate: any };
 
-export const MiddlewareInit = (
+export const MiddlewareInit = async (
   { debug = true, fallbackLng = 'en' },
   i18nList: TypeI18NDomain[]
 ) => {

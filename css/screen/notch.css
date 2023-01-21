@@ -1,3 +1,4 @@
+// https://benfrain.com/how-to-get-the-value-of-phone-notches-environment-variables-env-in-javascript-from-css/
 :root {
   --uh-sat: env(safe-area-inset-top);
   --uh-sar: env(safe-area-inset-right);
