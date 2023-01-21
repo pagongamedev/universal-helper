@@ -1,4 +1,4 @@
-// https://benfrain.com/how-to-get-the-value-of-phone-notches-environment-variables-env-in-javascript-from-css/
+/* https://benfrain.com/how-to-get-the-value-of-phone-notches-environment-variables-env-in-javascript-from-css/ */
 :root {
   --uh-sat: env(safe-area-inset-top);
   --uh-sar: env(safe-area-inset-right);
@@ -6,7 +6,7 @@
   --uh-sal: env(safe-area-inset-left);
 }
 
-// ====== Padding ======
+/* ====== Padding ====== */
 .uh-notch-p-t {
   padding-top: env(safe-area-inset-top);
 }
@@ -40,7 +40,7 @@
   padding-left: env(safe-area-inset-left);
 }
 
-// ====== Margin ======
+/* ====== Margin ====== */
 
 .uh-notch-m-t {
   margin-top: env(safe-area-inset-top);

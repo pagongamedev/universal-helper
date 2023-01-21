@@ -99,7 +99,7 @@
   });
   var import_i18next = __toESM(__require("i18next"));
   var import_react_i18next = __require("react-i18next");
-  var MiddlewareInit = ({ debug = true, fallbackLng = "en" }, i18nList) => {
+  var MiddlewareInit = (_0, _1) => __async(void 0, [_0, _1], function* ({ debug = true, fallbackLng = "en" }, i18nList) {
     const resources = {};
     for (const i in i18nList) {
       if (i18nList[i].name !== "") {
@@ -122,7 +122,7 @@
       resources
     });
     return import_i18next.default;
-  };
+  });
   var MappingObject = (input, tranFunc) => {
     if (!input) {
       return "";

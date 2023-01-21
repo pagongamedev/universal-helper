@@ -75,7 +75,7 @@ __export(i18next_exports, {
 });
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-var MiddlewareInit = ({ debug = true, fallbackLng = "en" }, i18nList) => {
+var MiddlewareInit = (_0, _1) => __async(void 0, [_0, _1], function* ({ debug = true, fallbackLng = "en" }, i18nList) {
   const resources = {};
   for (const i in i18nList) {
     if (i18nList[i].name !== "") {
@@ -98,7 +98,7 @@ var MiddlewareInit = ({ debug = true, fallbackLng = "en" }, i18nList) => {
     resources
   });
   return i18n;
-};
+});
 var MappingObject = (input, tranFunc) => {
   if (!input) {
     return "";
