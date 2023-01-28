@@ -15,7 +15,7 @@ for easy calling zustand
 
 store.ts
 ```javascript
-import { helperZustand } from 'universal-helper';
+import { HelperZustand } from 'universal-helper';
 
 import create from 'zustand';
 
@@ -50,7 +50,7 @@ using file
 
 ### GetTempWhenSetState
 ```javascript
-import { helperReact } from 'universal-helper';
+import { HelperReact } from 'universal-helper';
 
 const JSX = () => {
   const [count, setCount] = useState<number>(0);
@@ -67,7 +67,7 @@ const JSX = () => {
 ## helperPromise
 ### GolangResponse
 ```javascript
-import { helperPromise } from 'universal-helper';
+import { HelperPromise } from 'universal-helper';
 
 const {res , error} = await helperPromise.GolangResponse(<Promise>);
 
@@ -78,11 +78,20 @@ if (error){
 
 console.log("res :", res);
 ```
+### GolangToThrowResponse
+```javascript
+import { HelperPromise } from 'universal-helper';
+
+// error throw
+const res = await helperPromise.GolangToThrowResponse(
+   <Promise<TypeGolangResponse>>
+   );
+```
 
 ## helperAPI
 ### GolangResponse
 ```javascript
-import { helperAPI } from 'universal-helper';
+import { HelperAPI } from 'universal-helper';
 import Axios from 'axios';
 
 const {res , error} = await helperAPI.GolangResponse(Axios.get('url'));
@@ -93,6 +102,16 @@ if (error){
 }
 
 console.log("res :", res);
+```
+
+### GolangToThrowResponse
+```javascript
+import { HelperAPI } from 'universal-helper';
+
+// error throw
+const res = await helperAPI.GolangToThrowResponse(
+   <Promise<TypeAPIDataGolangResponse>>
+   );
 ```
 
 ## helperTailwind
@@ -112,7 +131,7 @@ import 'universal-helper/css/tailwind.css';
 use uh-h-screen class instead of h-screen
 
 ```javascript
-import { helperTailwind } from 'universal-helper';
+import { HelperTailwind } from 'universal-helper';
 
 helperTailwind.FixbugVHScreenInMobile();
 ```
@@ -120,7 +139,7 @@ helperTailwind.FixbugVHScreenInMobile();
 
 ### TypeI18NDomain
 ```javascript
-import { helperI18Next } from 'universal-helper';
+import { HelperI18Next } from 'universal-helper';
 
 // type TypeI18NDomain = { name: string; locate: any };
 const i18nLocale1: helperI18Next.TypeI18NDomain = {
@@ -133,7 +152,7 @@ const i18nLocale1: helperI18Next.TypeI18NDomain = {
 middleware for separate to i18n local store
 
  ```javascript
-import { helperI18Next } from 'universal-helper';
+import { HelperI18Next } from 'universal-helper';
 
 const i18nList = [
   { name: 'main', locate: { en: { foo: '' }, th: { foo: '' } } },
@@ -153,7 +172,7 @@ helperI18Next.MiddlewareInit(
 ### MappingObject
 
 ```javascript
-import { helperI18Next } from 'universal-helper';
+import { HelperI18Next } from 'universal-helper';
 
 const JSX = () => {
   const { t } = useTranslation([i18nDomainName]);
@@ -174,7 +193,7 @@ const JSX = () => {
 ### TypeGolangResponse
 
 ```javascript
-import { helperType } from 'universal-helper';
+import { HelperType } from 'universal-helper';
 
 // TypeGolangResponse = { res: any; error: Error | null }
 const func = () : helperType.TypeGolangResponse => {
@@ -232,7 +251,7 @@ export type TypePaginationResponse = {
 use for short return promise in useContext
 
 ```javascript
-import { helperType } from 'universal-helper';
+import { HelperType } from 'universal-helper';
 
 // TypeGolangResponse = { res: any; error: Error | null }
 const func = async () : helperType.TypeGolangResponse => {
@@ -245,7 +264,7 @@ return helperType.ReturnInterfacePromise({ res: null, error: null });
 ### WaitForMilliSecond
 
 ```javascript
-import { helperTime } from 'universal-helper';
+import { HelperTime } from 'universal-helper';
 
 const foo = async () => {
   await helperTime.WaitForMilliSecond(5000);
@@ -255,7 +274,7 @@ const foo = async () => {
 ### ParseDate
 make sure to Date for upload firestore or create DayJS
 ```javascript
-import { helperTime } from 'universal-helper';
+import { HelperTime } from 'universal-helper';
 
 // support DayJS , Firestore.Timestamp , Date
 const dayjs = Dayjs()
@@ -264,7 +283,7 @@ const date = helperTime.ParseDate(dayjs);
 
 ### IsJsonFirestoreTimeStamp
 ```javascript
-import { helperTime } from 'universal-helper';
+import { HelperTime } from 'universal-helper';
 
 const jsonData = { nanoseconds: 813000000, seconds: 1672944437 };
 console.log(helperTime.IsJsonFirestoreTimeStamp(jsonData));
@@ -274,7 +293,7 @@ console.log(helperTime.IsJsonFirestoreTimeStamp(jsonData));
 ### ConvertJsonFirestoreTimeStampToDate
 make sure to Date for upload firestore or create DayJS
 ```javascript
-import { helperTime } from 'universal-helper';
+import { HelperTime } from 'universal-helper';
 
 const jsonData = { nanoseconds: 813000000, seconds: 1672944437 };
 const date = helperTime.ConvertJsonFirestoreTimeStampToDate(jsonData);
@@ -285,7 +304,7 @@ const date = helperTime.ConvertJsonFirestoreTimeStampToDate(jsonData);
 ### FullScreen
 ### FullScreen.OnChange
 ```javascript
-import { helperScreen } from 'universal-helper';
+import { HelperScreen } from 'universal-helper';
 
 const OnChangeFullScreen = (event: Event) => {
   if (helperScreen.FullScreen.IsFullScreen()) {
@@ -300,7 +319,7 @@ helperScreen.FullScreen.OnChange(OnChangeFullScreen);
 ### FullScreen.IsFullScreen
 
 ```javascript
-import { helperScreen } from 'universal-helper';
+import { HelperScreen } from 'universal-helper';
 
 if (helperScreen.FullScreen.IsFullScreen()) {
   console.log('Enter Full Screen');
@@ -312,7 +331,7 @@ if (helperScreen.FullScreen.IsFullScreen()) {
 
 ### FullScreen.Request
 ```javascript
-import { helperScreen } from 'universal-helper';
+import { HelperScreen } from 'universal-helper';
 
 // FullScreen
 await helperScreen.FullScreen.Request();
@@ -329,7 +348,7 @@ await helperScreen.FullScreen.Request(null,options);
 ```
 ### FullScreen.Cancel
 ```javascript
-import { helperScreen } from 'universal-helper';
+import { HelperScreen } from 'universal-helper';
 
 helperScreen.FullScreen.Cancel();
 ```
@@ -365,7 +384,7 @@ import 'universal-helper/css/screen/notch.css';
 
 ### Notch.GetNotchArea
 ```javascript
-import { helperScreen } from 'universal-helper';
+import { HelperScreen } from 'universal-helper';
 
 const notchArea = helperScreen.Notch.GetNotchArea();
 // { top: '0px', right: '0px', bottom: '0px', left: '0px' }
@@ -374,18 +393,18 @@ const notchArea = helperScreen.Notch.GetNotchArea();
 ### Notch.InitOnChange
 init for enable event notch onchange
 ```javascript
-import { helperScreen } from 'universal-helper';
+import { HelperScreen } from 'universal-helper';
 helperScreen.Notch.InitOnChange();
 ```
 ### Notch.AddEventListener
 ```javascript
-import { helperScreen } from 'universal-helper';
+import { HelperScreen } from 'universal-helper';
 helperScreen.Notch.AddEventListener(onNotchChange);
 ```
 
 ### Notch.RemoveEventListener
 ```javascript
-import { helperScreen } from 'universal-helper';
+import { HelperScreen } from 'universal-helper';
 helperScreen.Notch.RemoveEventListener(onNotchChange);
 ```
 
@@ -393,7 +412,7 @@ helperScreen.Notch.RemoveEventListener(onNotchChange);
 
 ### IsPWA
 ```javascript
-import { helperPWA } from 'universal-helper';
+import { HelperPWA } from 'universal-helper';
 
 console.log("Is PWA :",helperPWA.IsPWA());
 ```
@@ -402,7 +421,7 @@ console.log("Is PWA :",helperPWA.IsPWA());
 
 ### ClassEventObserver
 ```javascript
-import { helperEvent } from 'universal-helper';
+import { HelperEvent } from 'universal-helper';
 
 const onCustomEvent = new helperEvent.ClassEventObserver();
 

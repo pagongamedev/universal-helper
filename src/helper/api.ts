@@ -1,4 +1,4 @@
-import { TypeGolangResponse } from './type';
+import { TypeAPIDataGolangResponse, TypeGolangResponse } from './type';
 
 export const GolangResponse = async (
   promiseAPI: any
@@ -17,4 +17,15 @@ export const GolangResponse = async (
   } catch (error: any) {
     return { res: null, error: error };
   }
+};
+
+export const GolangToThrowResponse = async (
+  promise: Promise<TypeAPIDataGolangResponse>
+) => {
+  const resAPI = await promise;
+  if (resAPI.error) {
+    console.log('error :', resAPI.error);
+    throw resAPI.error;
+  }
+  return resAPI.res?.data;
 };

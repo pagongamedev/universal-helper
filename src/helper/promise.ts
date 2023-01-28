@@ -15,3 +15,14 @@ export const GolangResponse = async (
     return { res: null, error: error };
   }
 };
+
+export const GolangToThrowResponse = async (
+  promise: Promise<TypeGolangResponse>
+) => {
+  const resPromise = await promise;
+  if (resPromise.error) {
+    console.log('error :', resPromise.error);
+    throw resPromise.error;
+  }
+  return resPromise.res;
+};
