@@ -17,7 +17,7 @@ store.ts
 ```javascript
 import { HelperZustand } from 'universal-helper';
 
-import create from 'zustand';
+import { create } from 'zustand';
 
 export const store = create((setState, getState) => ({
   user: '',
