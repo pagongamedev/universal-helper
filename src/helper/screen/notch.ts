@@ -14,7 +14,7 @@ export const GetNotchArea = () => {
 const onNotchChange = new ClassEventObserver();
 
 let _notchArea = { top: '0px', right: '0px', bottom: '0px', left: '0px' };
-const fnOnNotchChange = (event: Event) => {
+const fnOnNotchChange = (/*event: Event*/) => {
   const notchArea = GetNotchArea();
   if (
     notchArea.top == _notchArea.top &&

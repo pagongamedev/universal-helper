@@ -1,15 +1,30 @@
 {
   "name": "universal-helper",
-  "version": "0.0.25",
   "description": "helper for fullstack developer",
-  "main": "src/index.ts",
+  "version": "0.0.26",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "types": "./dist/index.d.ts",
+  "module": "./dist/universal-helper.js",
+  "main": "./dist/universal-helper.umd.cjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/universal-helper.js",
+      "require": "./dist/universal-helper.umd.cjs"
+    }
+  },
+  "engines": {
+    "npm": "please-use-pnpm",
+    "node": ">=19.0.0 <20.0.0",
+    "pnpm": ">=8.0.0 <9.0.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "analyzer-module": "esbuild-visualizer --metadata ./analytics/esbuild-analyzer-meta.module.json --filename ./analytics/esbuild-analyzer-stat.module.htm",
-    "analyzer-dev": "esbuild-visualizer --metadata ./analytics/esbuild-analyzer-meta.dev.json --filename ./analytics/esbuild-analyzer-stat.dev.htm",
-    "dev": "node ./utils/build/esbuild-config.dev.js && npm run nalyzer-dev",
-    "analyzer": "esbuild-visualizer --metadata ./analytics/esbuild-analyzer-meta.json --filename ./analytics/esbuild-analyzer-stat.htm",
-    "build": "node ./utils/build/esbuild-config.prod.js && npm run analyzer && npm run analyzer-module"
+    "start": "vite build --watch",
+    "tsc": "tsc --watch",
+    "build": "tsc && vite build"
   },
   "repository": {
     "type": "git",
@@ -30,13 +45,18 @@
   },
   "homepage": "https://github.com/pagongamedev/universal-helper#readme",
   "devDependencies": {
-    "@types/react": "^18.0.26",
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.33",
     "dayjs": "^1.11.7",
-    "firebase": "^9.15.0",
-    "i18next": "^22.4.5",
+    "firebase": "^9.19.1",
+    "i18next": "^22.4.14",
     "react": "^18.2.0",
-    "react-i18next": "^12.1.1",
-    "zustand": "^4.1.5"
+    "react-i18next": "^12.2.0",
+    "rollup-plugin-visualizer": "^5.9.0",
+    "typescript": "^5.0.3",
+    "vite": "^4.2.1",
+    "vite-plugin-dts": "^2.2.0",
+    "zustand": "^4.3.7"
   },
   "peerDependencies": {
     "i18next": "^22.X",
